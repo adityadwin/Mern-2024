@@ -1,8 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
-// import connectDB from "./config/db"; // Hapus atau komen baris ini
-
+import connectDB from "./config/db";
 import cors from "cors";
 import {
   errorResponserHandler,
@@ -20,11 +19,8 @@ const __dirname = path.dirname(__filename);
 console.log(__dirname);
 
 dotenv.config();
-
-// connectDB(); // Hapus atau komen baris ini
-
+connectDB();
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 
